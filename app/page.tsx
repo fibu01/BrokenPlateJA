@@ -1,11 +1,65 @@
 const reservationUrl = "https://sevn.ly/x7oGHGqd";
 const instagramUrl = "https://www.instagram.com/brokenplateja/";
 
-const menuItems = [
-  { name: "Oxtail Wonton", detail: "Slow-braised oxtail · feta · hoisin sesame jus", price: "1,950" },
-  { name: "Charred Octopus", detail: "Callaloo romesco · pickled red onion · crispy capers", price: "2,250" },
-  { name: "Curried Goat Pasta", detail: "Boneless curried goat · rigatoni · béchamel · parmesan", price: "4,350" },
-  { name: "Braised Oxtail Risotto", detail: "Saffron arborio · scotch bonnet butter · scallion oil", price: "5,450" },
+const menuSections = [
+  {
+    title: "Small plates",
+    note: "Pass them around. Or don’t.",
+    items: [
+      { name: "Oxtail Wonton", detail: "Slow-braised oxtail · feta · hoisin sesame oxtail jus", price: "1,950" },
+      { name: "Charred Octopus", detail: "Callaloo roasted pepper romesco · pickled red onion · crispy capers", price: "2,250" },
+      { name: "Berbere Wings", detail: "Ethiopian spice blend · honey tamarind glaze · coconut yoghurt dip", price: "2,150" },
+      { name: "Rock Lobster Bites", detail: "Tempura lobster · miso gochujang · sesame · warm sweet corn salad", price: "2,250" },
+      { name: "Jerk Shrimp Flatbread", detail: "Jerk shrimp · marinara · roasted pepper · red onion · house cheese", price: "2,450" },
+      { name: "Pumpkin & Basil Spring Roll", detail: "Jamaican pumpkin · fresh basil · callaloo romesco", price: "1,950" },
+      { name: "Salmon Tostones", detail: "Panko salmon · caramelised onion · feta · roasted garlic aioli", price: "1,950" },
+      { name: "Calamari", detail: "Southern-fried calamari · pimento sweet chilli sauce", price: "2,550" },
+    ],
+  },
+  {
+    title: "Pasta & rice",
+    note: "Comfort food with passport stamps.",
+    items: [
+      { name: "Curried Goat Pasta", detail: "Boneless curried goat · rigatoni · béchamel · parmesan · crostini", price: "4,350" },
+      { name: "Seafood Scampi", detail: "Linguine · shrimp · mussels · clams · scotch bonnet rosemary broth", price: "4,150" },
+      { name: "Lobster Fettuccine", detail: "Lobster · house lobster sauce · tomato · herbs · toasted panko", price: "4,850" },
+      { name: "Wok Duck Fried Rice", detail: "Confit duck · mirepoix · scallion · house fry · sunny-side egg", price: "4,550" },
+      { name: "Creamy Pesto Pasta", detail: "Rigatoni · house béchamel · basil pesto · grilled crostini", price: "3,650" },
+    ],
+  },
+  {
+    title: "Big plates",
+    note: "Main-character energy.",
+    items: [
+      { name: "Braised Oxtail Saffron Risotto", detail: "Slow-braised oxtail · saffron arborio · scotch bonnet butter · parmesan", price: "5,450" },
+      { name: "Mango Chilli Shrimp", detail: "Jumbo shrimp · mango purée · scotch bonnet · ginger · crispy shallot · rice pilaf", price: "5,250" },
+      { name: "Smoked Pork Chops", detail: "Smoked in-house · passion fruit plum hoisin · mash · vegetables", price: "4,950" },
+      { name: "Catch of the Day", detail: "Flash-fried fish · roasted corn salsa · parmesan quinoa risotto", price: "3,950" },
+      { name: "Lamb Shank", detail: "Red-wine braised · roasted sweet potato · caramelised onion · vegetables", price: "5,950" },
+      { name: "Ribeye", detail: "Creamy truffle pimento jus · mashed potato · sautéed vegetables", price: "12,550" },
+    ],
+  },
+  {
+    title: "Fresh & handheld",
+    note: "Greens, stacks and serious sandwiches.",
+    items: [
+      { name: "The BP", detail: "House slaw · beetroot · pumpkin · pineapple · parmesan · tamarind dressing", price: "2,150" },
+      { name: "Mediterranean Salad", detail: "Lettuce · cucumber · tomato · feta · olives · almond · lime vinaigrette", price: "2,250" },
+      { name: "Oxtail Birria Sandwich", detail: "Slow-braised oxtail · brioche · salsa verde · mozzarella · consommé", price: "4,150" },
+      { name: "Honey Sriracha Fish Sandwich", detail: "Beer-battered fish · avocado · bacon · slaw · honey sriracha", price: "3,550" },
+      { name: "The Smashed Burger", detail: "Double pesto beef patty · cheddar · sweet onion · pickles · fries", price: "3,950" },
+    ],
+  },
+  {
+    title: "Sweet endings",
+    note: "You definitely have room.",
+    items: [
+      { name: "Mango Tres Leches", detail: "Mango sponge · tres leches soak · coconut flakes", price: "1,450" },
+      { name: "Chocolate Mousse Cake", detail: "Chocolate cake · dark chocolate mousse · chocolate frosting", price: "1,350" },
+      { name: "Carrot Cake Toffee Pudding", detail: "Warm toffee pudding · coffee-whipped topping", price: "1,450" },
+      { name: "Rum & Raisin Cheesecake", detail: "Rum-soaked raisins · butter biscuit base", price: "1,450" },
+    ],
+  },
 ];
 
 export default function Home() {
@@ -96,12 +150,21 @@ export default function Home() {
         </div>
 
         <div className="menu-list">
-          {menuItems.map((item, index) => (
-            <article key={item.name}>
-              <span className="menu-number">0{index + 1}</span>
-              <div><h3>{item.name}</h3><p>{item.detail}</p></div>
-              <strong>J${item.price}</strong>
-            </article>
+          {menuSections.map((section) => (
+            <section className="menu-category" key={section.title}>
+              <header className="menu-category-heading">
+                <h3>{section.title}</h3>
+                <p>{section.note}</p>
+              </header>
+              <div className="menu-category-items">
+                {section.items.map((item) => (
+                  <article key={item.name}>
+                    <div><h4>{item.name}</h4><p>{item.detail}</p></div>
+                    <strong><small>J$</small>{item.price}</strong>
+                  </article>
+                ))}
+              </div>
+            </section>
           ))}
         </div>
         <p className="menu-note">Menu and prices are seasonal and may change. Ask your server what the kitchen is excited about today.</p>
