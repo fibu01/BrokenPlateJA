@@ -83,20 +83,25 @@ export default function Home() {
       <section className="hero" id="top">
         <div className="hero-copy">
           <p className="eyebrow"><span /> Kingston, Jamaica</p>
-          <h1>Taste life<br />outside<br /><em>the lines.</em></h1>
-          <div className="hero-bottom">
-            <p>Bold Jamaican flavour. Global curiosity. One rooftop made for golden hours that turn into great nights.</p>
-            <a className="circle-link" href="#menu" aria-label="Explore the menu">↓</a>
+          <h1>Jamaican soul.<br /><em>Global appetite.</em></h1>
+          <p className="hero-lede">Seasonal Jamaican ingredients, unexpected global technique and plates made to share—served above the city in Barbican.</p>
+          <div className="hero-actions">
+            <a className="solid-button" href="#menu">Explore the menu <span>↓</span></a>
+            <a className="text-link" href={reservationUrl} target="_blank" rel="noreferrer">Reserve a table <span>↗</span></a>
+          </div>
+          <div className="hero-proof">
+            <img src="/images/hero-social.jpg" alt="A guest enjoying Broken Plate" />
+            <p><strong>Food first. Good energy always.</strong><br />Dinner dates, celebrations and rooftop nights.</p>
           </div>
         </div>
         <div className="hero-visual">
-          <img src="/images/hero-social.jpg" alt="A guest enjoying golden hour at Broken Plate" />
+          <img src="/images/rooftop.jpg" alt="Crisp golden small plates with vibrant dipping sauces at Broken Plate" />
           <div className="hero-badge">
-            <span>OPEN TODAY</span>
-            <strong>12—10</strong>
-            <small>BARBICAN RD.</small>
+            <span>PASS</span>
+            <strong>THE</strong>
+            <small>PLATES</small>
           </div>
-          <p className="image-credit">ROOFTOP ENERGY · KINGSTON</p>
+          <div className="hero-image-note"><span>CHEF-DRIVEN</span><strong>Local flavour.<br />Worldly moves.</strong></div>
         </div>
       </section>
 
