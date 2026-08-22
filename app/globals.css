@@ -9,6 +9,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Great Vibes";
+  src: url("/fonts/great-vibes-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root { --ink: #181816; --cream: #f3efe5; --orange: #ff5a20; --lime: #d7ff43; --white: #fffdf7; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -72,7 +80,7 @@ h1 em, h2 em { color: var(--orange); font-weight: 400; }
 .menu-section { padding: 120px 4vw 110px; font-family: "Bricolage Grotesque", "Trebuchet MS", sans-serif; }
 .section-heading { display: flex; justify-content: space-between; align-items: end; margin-bottom: 65px; }
 .menu-section .section-heading h2 { margin: 24px 0 0; font-family: "Bricolage Grotesque", sans-serif; font-size: clamp(63px, 7.7vw, 125px); font-weight: 760; line-height: .78; letter-spacing: -.075em; }
-.menu-section .section-heading h2 em { font-family: Georgia, serif; font-weight: 400; letter-spacing: -.07em; }
+.menu-section .section-heading h2 em { font-family: "Great Vibes", cursive; font-style: normal; font-weight: 400; letter-spacing: 0; }
 .text-link { display: inline-flex; align-items: center; gap: 38px; padding-bottom: 9px; border-bottom: 1px solid currentColor; font-size: 11px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
 .feature-cards { display: grid; grid-template-columns: 1.35fr .8fr .72fr; gap: 18px; margin-bottom: 100px; }
 .food-card { min-height: 560px; position: relative; overflow: hidden; background: #333; }
@@ -81,7 +89,7 @@ h1 em, h2 em { color: var(--orange); font-weight: 400; }
 .food-card::after { content: ""; position: absolute; inset: 45% 0 0; background: linear-gradient(transparent, rgba(0,0,0,.82)); pointer-events: none; }
 .food-card-copy { position: absolute; left: 28px; bottom: 26px; color: white; z-index: 1; }
 .food-card-copy span { font-size: 9px; font-weight: 900; text-transform: uppercase; letter-spacing: .16em; }
-.food-card-copy h3 { margin: 10px 0 0; font-family: "Bricolage Grotesque", sans-serif; font-size: clamp(33px, 3.2vw, 52px); line-height: .87; font-weight: 750; letter-spacing: -.055em; }
+.food-card-copy h3 { margin: 10px 0 0; font-family: "Great Vibes", cursive; font-size: clamp(45px, 4.2vw, 70px); line-height: .82; font-weight: 400; letter-spacing: 0; }
 .bright-card { background: var(--lime); padding: 35px; min-width: 0; }
 .bright-card::after { display: none; }
 .bright-card > p { margin: 0; font-size: clamp(32px, 3.7vw, 58px); font-weight: 900; line-height: .9; letter-spacing: -.075em; overflow-wrap: anywhere; }
@@ -90,12 +98,12 @@ h1 em, h2 em { color: var(--orange); font-weight: 400; }
 .menu-list { display: grid; gap: 78px; }
 .menu-category { min-width: 0; }
 .menu-category-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; padding: 0 0 18px; border-bottom: 3px solid var(--ink); }
-.menu-category-heading h3 { margin: 0; font-family: "Bricolage Grotesque", sans-serif; font-size: clamp(38px, 4.7vw, 70px); font-weight: 780; line-height: .84; letter-spacing: -.065em; text-transform: uppercase; }
+.menu-category-heading h3 { margin: 0; font-family: "Great Vibes", cursive; font-size: clamp(54px, 5.6vw, 84px); font-weight: 400; line-height: .8; letter-spacing: 0; }
 .menu-category-heading p { margin: 0; color: var(--orange); font-family: Georgia, serif; font-size: 16px; font-style: italic; }
 .menu-category-items { display: grid; grid-template-columns: 1fr 1fr; column-gap: clamp(35px, 5vw, 80px); }
-.menu-category-items article { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 28px; align-items: center; min-height: 138px; padding: 19px 0; border-bottom: 1px solid rgba(24,24,22,.3); transition: color .2s ease, transform .2s ease; }
+.menu-category-items article { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 28px; align-items: center; min-height: 148px; padding: 19px 0; border-bottom: 1px solid rgba(24,24,22,.3); transition: color .2s ease, transform .2s ease; }
 .menu-category-items article:hover { color: var(--orange); transform: translateX(5px); }
-.menu-category-items h4 { margin: 0 0 7px; font-family: "Bricolage Grotesque", sans-serif; font-size: clamp(24px, 2.15vw, 34px); font-weight: 740; line-height: .97; letter-spacing: -.045em; }
+.menu-category-items h4 { margin: 0 0 8px; font-family: "Great Vibes", cursive; font-size: clamp(35px, 3.25vw, 49px); font-weight: 400; line-height: .9; letter-spacing: 0; }
 .menu-category-items p { margin: 0; max-width: 550px; color: #6e6b65; font-family: "Bricolage Grotesque", sans-serif; font-size: 14px; line-height: 1.42; letter-spacing: -.012em; }
 .menu-category-items strong { align-self: center; color: var(--orange); font-family: "Bricolage Grotesque", sans-serif; font-size: clamp(25px, 2.25vw, 34px); font-weight: 800; line-height: 1; letter-spacing: -.045em; white-space: nowrap; }
 .menu-category-items strong small { margin-right: 3px; font-size: 11px; font-weight: 750; letter-spacing: .02em; vertical-align: 7px; }
