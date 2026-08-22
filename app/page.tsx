@@ -1,5 +1,7 @@
 const reservationUrl = "https://sevn.ly/x7oGHGqd";
 const instagramUrl = "https://www.instagram.com/brokenplateja/";
+const mapUrl = "https://maps.google.com/?q=Broken+Plate+24+Barbican+Road+Progressive+Shopping+Center+Kingston+Jamaica";
+const phoneHref = "tel:+18766676891";
 
 const menuSections = [
   {
@@ -65,10 +67,14 @@ const menuSections = [
 export default function Home() {
   return (
     <main>
+      <div className="contact-bar" aria-label="Restaurant contact details">
+        <a href={mapUrl} target="_blank" rel="noreferrer"><span>Find us</span> 24 Barbican Road · Progressive Shopping Center</a>
+        <a href={phoneHref}><span>Call us</span> (876) 667-6891</a>
+        <p>Mon—Sat 12PM—10PM · Sun 12PM—8PM</p>
+      </div>
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="Broken Plate home">
-          <span className="brand-mark">B</span>
-          <span>BROKEN<br />PLATE</span>
+        <a className="brand official-brand" href="#top" aria-label="Broken Plate home">
+          <img src="/images/broken-plate-logo.png" alt="Broken Plate" />
         </a>
         <nav aria-label="Primary navigation">
           <a href="#menu">Menu</a>
@@ -224,12 +230,12 @@ export default function Home() {
           <div>
             <span className="detail-label">Find us</span>
             <p>24–28 Barbican Road<br />Progressive Shopping Center<br />Kingston, Jamaica</p>
-            <a href="https://maps.google.com/?q=Broken+Plate+24-28+Barbican+Road+Kingston+Jamaica" target="_blank" rel="noreferrer">Get directions ↗</a>
+            <a href={mapUrl} target="_blank" rel="noreferrer">Get directions ↗</a>
           </div>
           <div>
             <span className="detail-label">Opening hours</span>
             <p>Mon—Sat <strong>12PM—10PM</strong><br />Sunday <strong>12PM—8PM</strong></p>
-            <a href="tel:+18766676891">(876) 667-6891 ↗</a>
+            <a href={phoneHref}>(876) 667-6891 ↗</a>
           </div>
           <div>
             <span className="detail-label">Dress note</span>
@@ -239,9 +245,9 @@ export default function Home() {
       </section>
 
       <footer>
-        <a className="brand footer-brand" href="#top"><span className="brand-mark inverse">B</span><span>BROKEN<br />PLATE</span></a>
+        <a className="footer-logo" href="#top" aria-label="Broken Plate home"><img src="/images/broken-plate-logo.png" alt="Broken Plate" /></a>
         <p>Jamaican soul. Global appetite.</p>
-        <div><a href={instagramUrl} target="_blank" rel="noreferrer">Instagram ↗</a><a href="https://brokenplatejamaica.com/menu/" target="_blank" rel="noreferrer">Menu ↗</a></div>
+        <div><a href={mapUrl} target="_blank" rel="noreferrer">24 Barbican Road ↗</a><a href={phoneHref}>(876) 667-6891</a><a href={instagramUrl} target="_blank" rel="noreferrer">Instagram ↗</a></div>
         <span>© 2026 BROKEN PLATE</span>
       </footer>
     </main>
