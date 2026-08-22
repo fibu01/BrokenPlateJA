@@ -2,6 +2,8 @@ const reservationUrl = "https://sevn.ly/x7oGHGqd";
 const instagramUrl = "https://www.instagram.com/brokenplateja/";
 const mapUrl = "https://maps.google.com/?q=Broken+Plate+24+Barbican+Road+Progressive+Shopping+Center+Kingston+Jamaica";
 const phoneHref = "tel:+18766676891";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const assetPath = (path: string) => `${basePath}${path}`;
 
 const menuSections = [
   {
@@ -74,7 +76,7 @@ export default function Home() {
       </div>
       <header className="site-header">
         <a className="brand official-brand" href="#top" aria-label="Broken Plate home">
-          <img src="/images/broken-plate-logo.png" alt="Broken Plate" />
+          <img src={assetPath("/images/broken-plate-logo.png")} alt="Broken Plate" />
         </a>
         <nav aria-label="Primary navigation">
           <a href="#menu">Menu</a>
@@ -96,12 +98,12 @@ export default function Home() {
             <a className="text-link" href={reservationUrl} target="_blank" rel="noreferrer">Reserve a table <span>↗</span></a>
           </div>
           <div className="hero-proof">
-            <img src="/images/hero-social.jpg" alt="A guest enjoying Broken Plate" />
+            <img src={assetPath("/images/hero-social.jpg")} alt="A guest enjoying Broken Plate" />
             <p><strong>Food first. Good energy always.</strong><br />Dinner dates, celebrations and rooftop nights.</p>
           </div>
         </div>
         <div className="hero-visual">
-          <img src="/images/rooftop.jpg" alt="Crisp golden small plates with vibrant dipping sauces at Broken Plate" />
+          <img src={assetPath("/images/rooftop.jpg")} alt="Crisp golden small plates with vibrant dipping sauces at Broken Plate" />
           <div className="hero-badge">
             <span>PASS</span>
             <strong>THE</strong>
@@ -123,7 +125,7 @@ export default function Home() {
         <h2>We break the rules,<br /><em>not the vibe.</em></h2>
         <div className="manifesto-grid">
           <div className="manifesto-image">
-            <img src="/images/rooftop.jpg" alt="Broken Plate's rooftop terrace at night" />
+            <img src={assetPath("/images/rooftop.jpg")} alt="Broken Plate's rooftop terrace at night" />
             <span>THE ROOFTOP · AFTER DARK</span>
           </div>
           <div className="manifesto-copy">
@@ -147,11 +149,11 @@ export default function Home() {
 
         <div className="feature-cards">
           <article className="food-card food-card-wide">
-            <img src="/images/dish-goat-pasta.jpg" alt="Broken Plate's curried goat pasta" />
+            <img src={assetPath("/images/dish-goat-pasta.jpg")} alt="Broken Plate's curried goat pasta" />
             <div className="food-card-copy"><span>Most talked about</span><h3>Curried Goat<br />Pasta</h3></div>
           </article>
           <article className="food-card">
-            <img src="/images/dish-tofu.jpg" alt="Glazed tofu with rice and vegetables" />
+            <img src={assetPath("/images/dish-tofu.jpg")} alt="Glazed tofu with rice and vegetables" />
             <div className="food-card-copy"><span>Plant-powered</span><h3>Tofu Stir Fry</h3></div>
           </article>
           <article className="food-card bright-card">
@@ -183,7 +185,7 @@ export default function Home() {
 
       <section className="sip-section">
         <div className="sip-image">
-          <img src="/images/interior.jpg" alt="Broken Plate's rooftop terrace overlooking Kingston" />
+          <img src={assetPath("/images/interior.jpg")} alt="Broken Plate's rooftop terrace overlooking Kingston" />
         </div>
         <div className="sip-copy">
           <p className="section-label">Every Thursday · 5PM till late</p>
@@ -206,7 +208,7 @@ export default function Home() {
         </div>
         <div className="social-grid">
           <a href={instagramUrl} target="_blank" rel="noreferrer" className="social-tile social-tile-tall">
-            <img src="/images/dish-salmon.jpg" alt="A colourful Broken Plate dinner spread" />
+            <img src={assetPath("/images/dish-salmon.jpg")} alt="A colourful Broken Plate dinner spread" />
             <span>DATE NIGHT, SORTED ↗</span>
           </a>
           <a href={instagramUrl} target="_blank" rel="noreferrer" className="social-tile social-tile-copy">
@@ -214,7 +216,7 @@ export default function Home() {
             <span>JOIN 32K+ FOOD LOVERS</span>
           </a>
           <a href={instagramUrl} target="_blank" rel="noreferrer" className="social-tile">
-            <img src="/images/dish-dim-sum.jpg" alt="Small plates at Broken Plate" />
+            <img src={assetPath("/images/dish-dim-sum.jpg")} alt="Small plates at Broken Plate" />
             <span>PASS THE PLATES ↗</span>
           </a>
         </div>
@@ -245,7 +247,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <a className="footer-logo" href="#top" aria-label="Broken Plate home"><img src="/images/broken-plate-logo.png" alt="Broken Plate" /></a>
+        <a className="footer-logo" href="#top" aria-label="Broken Plate home"><img src={assetPath("/images/broken-plate-logo.png")} alt="Broken Plate" /></a>
         <p>Jamaican soul. Global appetite.</p>
         <div><a href={mapUrl} target="_blank" rel="noreferrer">24 Barbican Road ↗</a><a href={phoneHref}>(876) 667-6891</a><a href={instagramUrl} target="_blank" rel="noreferrer">Instagram ↗</a></div>
         <span>© 2026 BROKEN PLATE</span>
